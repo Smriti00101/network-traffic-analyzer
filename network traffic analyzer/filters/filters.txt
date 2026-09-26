@@ -1,0 +1,22 @@
+# Wireshark Display Filters Used in This Project
+
+# Show all HTTP (unencrypted) traffic
+http
+
+# Show all DNS traffic
+dns
+
+# Show traffic on standard HTTP port
+tcp.port == 80
+
+# Show TCP connection initiations (SYN handshakes)
+tcp.flags.syn == 1 && tcp.flags.ack == 0
+
+# Track queries to a specific domain (replace [domain])
+dns.qry.name contains "[domain]"
+
+# Highlight HTTP POST requests (potential credential/form submissions)
+http.request.method == "POST"
+
+# Show only DNS responses (to inspect resolved IPs / TTLs)
+dns.flags.response == 1

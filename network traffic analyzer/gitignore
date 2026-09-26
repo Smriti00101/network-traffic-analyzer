@@ -1,0 +1,14 @@
+# Never commit raw packet captures - they can contain sensitive/personal data
+*.pcap
+*.pcapng
+*.cap
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temp files
+*.log
+*.tmp
